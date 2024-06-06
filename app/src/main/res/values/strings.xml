@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ducky Route</string>
+    <string name="logo_ducky_route">logo_ducky_route</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="olvid_su_contrase_a">¿Olvidó su contraseña?</string>
+</resources>

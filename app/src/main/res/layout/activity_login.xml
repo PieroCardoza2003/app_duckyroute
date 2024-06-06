@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.login.LoginActivity">
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:src="@drawable/icon_duckyroute"
+            android:contentDescription="@string/logo_ducky_route" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iniciar_sesi_n"
+            android:textSize="35sp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:id="@+id/edittext_email_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:drawableStart="@drawable/icon_person"
+            android:drawablePadding="10dp"
+            android:hint="@string/correo_electr_nico"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/edittext_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:drawableStart="@drawable/icon_password"
+            android:drawablePadding="10dp"
+            android:hint="@string/contrase_a"
+            android:inputType="textPassword"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:autofillHints="" />
+
+        <Button
+            android:layout_marginTop="15dp"
+            android:padding="13dp"
+            android:id="@+id/button_iniciar_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:text="@string/iniciar"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:id="@+id/textview_olvidocontrasena_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/olvid_su_contrase_a"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

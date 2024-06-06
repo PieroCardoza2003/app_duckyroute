@@ -1,0 +1,195 @@
+ARQUITECTURA 1
+---------------
+
+src/
+└── main/
+    ├── java/
+    │   └── com/
+    │       └── example/
+    │           └── truckdriverapp/
+    │               ├── data/
+    │               │   ├── local/
+    │               │   │   ├── db/
+    │               │   │   │   ├── AppDatabase.kt
+    │               │   │   │   ├── UserDao.kt
+    │               │   │   │   ├── PackageDao.kt
+    │               │   │   │   └── LocationDao.kt
+    │               │   │   └── preferences/
+    │               │   │       └── PreferencesManager.kt
+    │               │   ├── remote/
+    │               │   │   ├── api/
+    │               │   │   │   ├── UserService.kt
+    │               │   │   │   ├── PackageService.kt
+    │               │   │   │   └── LocationService.kt
+    │               │   │   └── NetworkUtils.kt
+    │               │   ├── repository/
+    │               │       ├── UserRepository.kt
+    │               │       ├── PackageRepository.kt
+    │               │       └── LocationRepository.kt
+    │               ├── model/
+    │               │   ├── User.kt
+    │               │   ├── Package.kt
+    │               │   └── Location.kt
+    │               ├── usecases/
+    │               │   ├── GetUserUseCase.kt
+    │               │   ├── GetPackagesUseCase.kt
+    │               │   ├── GetPackageDetailUseCase.kt
+    │               │   └── GetLocationUpdatesUseCase.kt
+    │               ├── viewmodel/
+    │               │   ├── LoginViewModel.kt
+    │               │   ├── MainViewModel.kt
+    │               │   ├── PackageDetailViewModel.kt
+    │               │   └── MapViewModel.kt
+    │               ├── ui/
+    │               │   ├── login/
+    │               │   │   └── LoginActivity.kt
+    │               │   │   └── activity_login.xml
+    │               │   ├── main/
+    │               │   │   └── MainActivity.kt
+    │               │   │   └── activity_main.xml
+    │               │   ├── packagedetail/
+    │               │   │   └── PackageDetailActivity.kt
+    │               │   │   └── activity_package_detail.xml
+    │               │   └── map/
+    │               │       └── MapActivity.kt
+    │               │       └── activity_map.xml
+    │               ├── utils/
+    │                   └── Constants.kt
+    │               └── di/
+    │                   └── AppModule.kt
+    └── res/
+        ├── layout/
+        │   ├── activity_login.xml
+        │   ├── activity_main.xml
+        │   ├── activity_package_detail.xml
+        │   └── activity_map.xml
+        ├── values/
+        │   ├── strings.xml
+        │   └── styles.xml
+        └── drawable/
+            └── ic_launcher.xml
+
+
+ARQUITECTURA 2
+--------------
+
+src/
+└── main/
+    ├── java/
+    │   └── com/
+    │       └── example/
+    │           └── truckdriverapp/
+    │               ├── data/
+    │               │   ├── local/
+    │               │   │   ├── db/
+    │               │   │   │   ├── AppDatabase.kt
+    │               │   │   │   ├── UserDao.kt
+    │               │   │   │   ├── PackageDao.kt
+    │               │   │   │   └── LocationDao.kt
+    │               │   │   └── preferences/
+    │               │   │       └── PreferencesManager.kt
+    │               │   ├── remote/
+    │               │   │   ├── api/
+    │               │   │   │   ├── UserService.kt
+    │               │   │   │   ├── PackageService.kt
+    │               │   │   │   └── LocationService.kt
+    │               │   │   └── NetworkUtils.kt
+    │               │   ├── repository/
+    │               │       ├── UserRepository.kt
+    │               │       ├── PackageRepository.kt
+    │               │       └── LocationRepository.kt
+    │               ├── model/
+    │               │   ├── User.kt
+    │               │   ├── Package.kt
+    │               │   └── Location.kt
+    │               ├── viewmodel/
+    │               │   ├── LoginViewModel.kt
+    │               │   ├── MainViewModel.kt
+    │               │   ├── PackageDetailViewModel.kt
+    │               │   └── MapViewModel.kt
+    │               ├── ui/
+    │               │   ├── login/
+    │               │   │   └── LoginActivity.kt
+    │               │   │   └── activity_login.xml
+    │               │   ├── main/
+    │               │   │   └── MainActivity.kt
+    │               │   │   └── activity_main.xml
+    │               │   ├── packagedetail/
+    │               │   │   └── PackageDetailActivity.kt
+    │               │   │   └── activity_package_detail.xml
+    │               │   └── map/
+    │               │       └── MapActivity.kt
+    │               │       └── activity_map.xml
+    │               └── utils/
+    │                   └── Constants.kt
+    └── res/
+        ├── layout/
+        │   ├── activity_login.xml
+        │   ├── activity_main.xml
+        │   ├── activity_package_detail.xml
+        │   └── activity_map.xml
+        ├── values/
+        │   ├── strings.xml
+        │   └── styles.xml
+        └── drawable/
+            └── ic_launcher.xml
+
+
+ARQUITECTURA 3
+--------------
+
+src/
+└── main/
+    ├── java/
+    │   └── com/
+    │       └── example/
+    │           └── truckdriverapp/
+    │               ├── data/
+    │               │   ├── db/
+    │               │   │   ├── AppDatabase.kt
+    │               │   │   ├── UserDao.kt
+    │               │   │   ├── PackageDao.kt
+    │               │   │   └── LocationDao.kt
+    │               │   ├── repository/
+    │               │   │   ├── UserRepository.kt
+    │               │   │   ├── PackageRepository.kt
+    │               │   │   └── LocationRepository.kt
+    │               │   └── api/
+    │               │       ├── UserService.kt
+    │               │       ├── PackageService.kt
+    │               │       └── LocationService.kt
+    │               ├── model/
+    │               │   ├── User.kt
+    │               │   ├── Package.kt
+    │               │   └── Location.kt
+    │               ├── viewmodel/
+    │               │   ├── LoginViewModel.kt
+    │               │   ├── MainViewModel.kt
+    │               │   ├── PackageDetailViewModel.kt
+    │               │   └── MapViewModel.kt
+    │               ├── ui/
+    │               │   ├── login/
+    │               │   │   └── LoginActivity.kt
+    │               │   ├── main/
+    │               │   │   └── MainActivity.kt
+    │               │   ├── packagedetail/
+    │               │   │   └── PackageDetailActivity.kt
+    │               │   └── map/
+    │               │       └── MapActivity.kt
+    │               ├── utils/
+    │               │   ├── NetworkUtils.kt
+    │               │   ├── PreferencesManager.kt
+    │               │   └── Constants.kt
+    │               └── di/
+    │                   └── AppModule.kt
+    └── res/
+        ├── layout/
+        │   ├── activity_login.xml
+        │   ├── activity_main.xml
+        │   ├── activity_package_detail.xml
+        │   └── activity_map.xml
+        ├── values/
+        │   ├── strings.xml
+        │   └── styles.xml
+        └── drawable/
+            └── ic_launcher.xml
