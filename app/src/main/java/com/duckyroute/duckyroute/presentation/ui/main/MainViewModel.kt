@@ -15,20 +15,7 @@ class MainViewModel: ViewModel(){
     }
 
     fun checkIsLogged(){
-        if (checkKeys()){
-            val remember = preferencesManager.getString("remember","")
-            if(remember.equals("true")){
-                setIsLogged(true)
-                return
-            }
-        }
-        setIsLogged(false)
+        setIsLogged(preferencesManager.checkUserSession())
     }
 
-    private fun checkKeys(): Boolean {
-        return (preferencesManager.contains("usuario") &&
-                preferencesManager.contains("accessToken") &&
-                preferencesManager.contains("refreshToken") &&
-                preferencesManager.contains("remember"))
-    }
 }

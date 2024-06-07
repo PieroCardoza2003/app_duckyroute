@@ -1,11 +1,13 @@
 package com.duckyroute.duckyroute.presentation.ui.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.duckyroute.duckyroute.databinding.ActivityLoginBinding
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
+import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,6 +30,12 @@ class LoginActivity : AppCompatActivity() {
             showMessage(message)
         }
 
+        loginViewModel.loginResult.observe(this){ result ->
+            if(result){
+                startHomeActivity()
+            }
+        }
+
         binding.buttonIniciarLogin.setOnClickListener{
             val email = binding.edittextEmailLogin.text.toString().trim()
             val password = binding.edittextPasswordLogin.text.toString().trim()
@@ -39,6 +47,12 @@ class LoginActivity : AppCompatActivity() {
         binding.textviewOlvidocontrasenaLogin.setOnClickListener{
             showMessage("Recuperar contraseña")
         }
+    }
+
+    private fun startHomeActivity(){
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showLoadAnimation(state: Boolean) {

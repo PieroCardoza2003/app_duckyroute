@@ -3,7 +3,9 @@ package com.duckyroute.duckyroute.presentation.ui.login
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerService.Companion.preferencesManager
 import com.duckyroute.duckyroute.domain.model.UserSessionRequest
+import com.duckyroute.duckyroute.domain.model.UserSessionResponse
 import com.duckyroute.duckyroute.domain.usecase.UserSessionUseCase
 import kotlinx.coroutines.launch
 import java.io.IOException
@@ -13,12 +15,11 @@ class LoginViewModel: ViewModel() {
     var getUserSession = UserSessionUseCase()
     val infoMessage = MutableLiveData<String>()
     val isLoading = MutableLiveData<Boolean>()
-
+    val loginResult = MutableLiveData<Boolean>()
 
     fun iniciarSession(email: String, password: String){
 
-        val isValid = validarCampos(email, password)
-        if(!isValid)
+        if (!validarCampos(email, password))
             return
 
         isLoading.postValue(true)
@@ -29,7 +30,10 @@ class LoginViewModel: ViewModel() {
                 val response = getUserSession(request)
 
                 if (response != null) {
-                    infoMessage.postValue("userID: ${response.usuarioId}")
+                    if(saveUserSession(response)){
+                        infoMessage.postValue("OK userID: ${response.usuarioId}")
+                        loginResult.postValue(true)
+                    }
                 } else {
                     infoMessage.postValue("Verifique su email y/o contraseña")
                 }
@@ -40,6 +44,8 @@ class LoginViewModel: ViewModel() {
             }
         }
     }
+
+    private fun saveUserSession(response: UserSessionResponse): Boolean = preferencesManager.saveUserSession(response)
 
 
     private fun validarCampos(email: String, password: String): Boolean{
