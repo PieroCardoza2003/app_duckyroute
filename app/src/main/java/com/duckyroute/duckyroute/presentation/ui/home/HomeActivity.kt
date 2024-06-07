@@ -1,4 +1,4 @@
-package com.duckyroute.duckyroute.ui.home
+package com.duckyroute.duckyroute.presentation.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

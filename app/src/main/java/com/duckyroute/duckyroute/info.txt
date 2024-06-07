@@ -1,3 +1,50 @@
+# Para realizar pruebas haciendo peticiones a una API HTTP
+#  agregar esta linea en el androidManifest.xml en el apartado de application:
+#  android:usesCleartextTraffic="true"
+
+ARQUITECTURA MVVM CON CLEAN ARCHITECTURE
+----------------------------------------
+app/
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── example/
+        │           └── cleanmvvm/
+        │               ├── data/
+        │               │   ├── model/
+        │               │   │   ├── LoginRequest.kt
+        │               │   │   └── LoginResponse.kt
+        │               │   ├── network/
+        │               │   │   ├── ApiService.kt
+        │               │   │   └── RetrofitInstance.kt
+        │               │   ├── repository/
+        │               │   │   └── UserRepositoryImpl.kt
+        │               │   └── util/
+        │               │       └── NetworkResult.kt
+        │               ├── domain/
+        │               │   ├── model/
+        │               │   │   ├── User.kt
+        │               │   │   └── Animal.kt
+        │               │   ├── repository/
+        │               │   │   └── UserRepository.kt
+        │               │   └── usecase/
+        │               │       └── LoginUseCase.kt
+        │               ├── presentation/
+        │               │   ├── login/
+        │               │   │   ├── LoginActivity.kt
+        │               │   │   ├── LoginViewModel.kt
+        │               │   │   └── LoginViewModelFactory.kt
+        │               └── di/
+        │                   └── AppModule.kt
+        └── res/
+            ├── layout/
+            │   └── activity_login.xml
+            └── values/
+                ├── colors.xml
+                └── strings.xml
+
+
 ARQUITECTURA 1
 ---------------
 

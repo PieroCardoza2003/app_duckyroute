@@ -1,4 +1,4 @@
-package com.duckyroute.duckyroute.ui.main
+package com.duckyroute.duckyroute.presentation.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.duckyroute.duckyroute.databinding.ActivityMainBinding
-import com.duckyroute.duckyroute.ui.home.HomeActivity
-import com.duckyroute.duckyroute.ui.login.LoginActivity
-import com.duckyroute.duckyroute.viewmodel.MainViewModel
+import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
+import com.duckyroute.duckyroute.presentation.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         mainViewModel.isLogged.observe(this) { isLogged ->
             val intent = if (isLogged) {
                 Intent(this, HomeActivity::class.java)
@@ -33,11 +31,5 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainViewModel.checkIsLogged()
-    }
-
-    private fun iniciarActivity(){
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 }

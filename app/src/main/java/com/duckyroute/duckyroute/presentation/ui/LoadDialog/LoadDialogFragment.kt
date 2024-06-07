@@ -1,4 +1,4 @@
-package com.duckyroute.duckyroute.ui.LoadDialog
+package com.duckyroute.duckyroute.presentation.ui.LoadDialog
 
 import android.os.Bundle
 import android.view.LayoutInflater

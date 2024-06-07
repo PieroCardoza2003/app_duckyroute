@@ -1,4 +1,4 @@
-package com.duckyroute.duckyroute.model
+package com.duckyroute.duckyroute.domain.model
 
 import java.time.LocalDate
 

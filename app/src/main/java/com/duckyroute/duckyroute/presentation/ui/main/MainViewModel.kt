@@ -1,4 +1,4 @@
-package com.duckyroute.duckyroute.viewmodel
+package com.duckyroute.duckyroute.presentation.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
