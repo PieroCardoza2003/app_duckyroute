@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.duckyroute.duckyroute.databinding.ActivityLoginBinding
+import com.duckyroute.duckyroute.domain.model.ResponseStatus
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
 import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
 
@@ -22,24 +23,24 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        loginViewModel.isLoading.observe(this){ state ->
-            showLoadAnimation(state)
-        }
-
-        loginViewModel.infoMessage.observe(this){ message ->
-            showMessage(message)
-        }
-
         loginViewModel.loginResult.observe(this){ result ->
-            if(result){
-                startHomeActivity()
+
+            when (result) {
+                ResponseStatus.SUCCESS -> startHomeActivity()
+                ResponseStatus.INCORRECT -> showMessage("Verifique su email y/o contraseña")
+                ResponseStatus.ERROR -> showMessage("Error de conexión. Por favor, verifica tu conexión a Internet.")
+                ResponseStatus.INVALID_EMAIL -> showMessage("El email ingresado es incorrecto")
+                ResponseStatus.EMPTY -> showMessage("Los campos no pueden estar en blanco")
+                else -> showMessage("Ocurrio un error desconocido")
             }
+            showLoadAnimation(false)
         }
 
         binding.buttonIniciarLogin.setOnClickListener{
             val email = binding.edittextEmailLogin.text.toString().trim()
             val password = binding.edittextPasswordLogin.text.toString().trim()
 
+            showLoadAnimation(true)
             loginViewModel.iniciarSession(email, password)
         }
 
@@ -71,3 +72,4 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
