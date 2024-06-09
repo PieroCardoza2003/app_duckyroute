@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.duckyroute.duckyroute.databinding.ActivityLoginBinding
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
-import com.duckyroute.duckyroute.presentation.ui.ErrorActivity
+import com.duckyroute.duckyroute.presentation.ui.error.ErrorActivity
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
 import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
 import kotlin.reflect.KClass
@@ -24,9 +24,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         loginViewModel.loginResult.observe(this){ result ->
-
             when (result) {
                 ResponseStatus.SUCCESS -> startActivity(HomeActivity::class)
                 ResponseStatus.INCORRECT -> showMessage("Verifique su email y/o contraseña")

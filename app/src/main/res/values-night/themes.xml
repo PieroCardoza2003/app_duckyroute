@@ -1,7 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DuckyRoute" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Configurar Tema de la aplicacion -->
+        <item name="colorPrimary">@color/colorDuckyHigh</item>
+        <item name="colorSecondary">@color/colorDuckyLow</item>
+        <!-- Color de la barra de estado -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Aplicar el color de texto negro a toda la aplicación -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.DuckyRoute" parent="Base.Theme.DuckyRoute"/>
+
+    <!-- Configurar Splash Screen -->
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/sp_icon_duckyroute</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.DuckyRoute</item>
     </style>
 </resources>

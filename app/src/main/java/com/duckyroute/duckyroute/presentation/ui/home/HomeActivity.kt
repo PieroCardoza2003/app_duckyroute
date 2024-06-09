@@ -9,7 +9,7 @@ import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerServic
 import com.duckyroute.duckyroute.databinding.ActivityHomeBinding
 import com.duckyroute.duckyroute.domain.model.ConductorResponse
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
-import com.duckyroute.duckyroute.presentation.ui.ErrorActivity
+import com.duckyroute.duckyroute.presentation.ui.error.ErrorActivity
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
 import com.duckyroute.duckyroute.presentation.ui.login.LoginActivity
 import kotlin.reflect.KClass

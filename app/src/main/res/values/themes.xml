@@ -4,6 +4,11 @@
         <!-- Configurar Tema de la aplicacion -->
         <item name="colorPrimary">@color/colorDuckyHigh</item>
         <item name="colorSecondary">@color/colorDuckyLow</item>
+        <!-- Color de la barra de estado -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Aplicar el color de texto negro a toda la aplicación -->
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Theme.DuckyRoute" parent="Base.Theme.DuckyRoute"/>

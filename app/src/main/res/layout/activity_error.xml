@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="35dp"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.ErrorActivity">
+    tools:context=".presentation.ui.error.ErrorActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:src="@drawable/icon_duckyerror"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/img_error" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="@string/ups_algo_sali_mal"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="@string/cierra_la_aplicaci_n_y_vuelve_a_intentarlo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_cerrar_error"
+        android:layout_marginTop="30dp"
+        android:padding="13dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/colorDuckyHigh"
+        android:text="@string/cerrar"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -17,8 +17,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.ErrorActivity"
-            android:exported="false" />
+            android:name=".presentation.ui.error.ErrorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".presentation.ui.home.HomeActivity"
             android:exported="false"
