@@ -7,8 +7,10 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.duckyroute.duckyroute.databinding.ActivityLoginBinding
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
+import com.duckyroute.duckyroute.presentation.ui.ErrorActivity
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
 import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
+import kotlin.reflect.KClass
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,12 +28,12 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginResult.observe(this){ result ->
 
             when (result) {
-                ResponseStatus.SUCCESS -> startHomeActivity()
+                ResponseStatus.SUCCESS -> startActivity(HomeActivity::class)
                 ResponseStatus.INCORRECT -> showMessage("Verifique su email y/o contraseña")
-                ResponseStatus.ERROR -> showMessage("Error de conexión. Por favor, verifica tu conexión a Internet.")
                 ResponseStatus.INVALID_EMAIL -> showMessage("El email ingresado es incorrecto")
                 ResponseStatus.EMPTY -> showMessage("Los campos no pueden estar en blanco")
-                else -> showMessage("Ocurrio un error desconocido")
+                ResponseStatus.ERROR -> startActivity(ErrorActivity::class)
+                else -> startActivity(ErrorActivity::class)
             }
             showLoadAnimation(false)
         }
@@ -50,8 +52,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun startHomeActivity(){
-        val intent = Intent(this, HomeActivity::class.java)
+    private fun startActivity(activityClass: KClass<*>){
+        val intent = Intent(this, activityClass.java)
         startActivity(intent)
         finish()
     }

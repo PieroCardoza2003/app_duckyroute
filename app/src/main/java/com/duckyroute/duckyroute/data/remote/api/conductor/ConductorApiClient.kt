@@ -8,7 +8,6 @@ import retrofit2.http.Path
 interface ConductorApiClient {
 
     @GET("/conductor/datos/{id}")
-    suspend fun getConductor(@Path("id") id: String): Response<ConductorResponse>
-
+    suspend fun getConductor(@Path("id") id: Int): Response<ConductorResponse>
 
 }

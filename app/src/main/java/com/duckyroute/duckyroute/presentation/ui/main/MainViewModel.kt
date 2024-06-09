@@ -7,8 +7,8 @@ import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerServic
 
 class MainViewModel: ViewModel(){
 
-    private val _isLogged = MutableLiveData<Boolean>() //se puede modificar
-    val isLogged: LiveData<Boolean> = _isLogged // solo se puede observar
+    private val _isLogged = MutableLiveData<Boolean>() // Modificable
+    val isLogged: LiveData<Boolean> = _isLogged // Observable
 
     private fun setIsLogged(state: Boolean){
         _isLogged.value = state

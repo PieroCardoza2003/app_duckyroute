@@ -7,13 +7,13 @@ import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerServic
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
 import com.duckyroute.duckyroute.domain.model.UserSessionRequest
 import com.duckyroute.duckyroute.domain.model.UserSessionResponse
-import com.duckyroute.duckyroute.domain.usecase.UserSessionUseCase
+import com.duckyroute.duckyroute.domain.usecase.GetUserSessionUseCase
 import kotlinx.coroutines.launch
 import java.io.IOException
 
 class LoginViewModel: ViewModel() {
 
-    var getUserSession = UserSessionUseCase()
+    var getUserSession = GetUserSessionUseCase()
     val loginResult = MutableLiveData<ResponseStatus>()
 
     fun iniciarSession(email: String, password: String){

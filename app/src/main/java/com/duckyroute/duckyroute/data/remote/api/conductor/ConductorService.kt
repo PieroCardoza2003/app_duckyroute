@@ -9,13 +9,10 @@ class ConductorService {
 
     private val retrofit = RetrofitHelper.getRetrofit()
 
-    suspend fun getConductor(id: String): ConductorResponse?{
+    suspend fun getConductor(id: Int): ConductorResponse?{
         return withContext(Dispatchers.IO){
             val response = retrofit.create(ConductorApiClient::class.java).getConductor(id)
             response.body()
         }
     }
-
-
-
 }

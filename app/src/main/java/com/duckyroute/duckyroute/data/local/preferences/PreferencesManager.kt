@@ -14,8 +14,8 @@ class PreferencesManager (context: Context) {
         editor.apply()
     }
 
-    fun getString(key: String, defaultValue: String): String? {
-        return sharedPreferences.getString(key, defaultValue)
+    private fun getString(key: String): String? {
+        return sharedPreferences.getString(key, "")
     }
 
     private fun deleteString(key: String) {
@@ -54,9 +54,25 @@ class PreferencesManager (context: Context) {
         return false
     }
 
+    fun getUserSession(): UserSessionResponse? {
+        return try {
+            if (checkUserSession()) {
+                val usuario = getString("usuario")?.toIntOrNull() ?: -1
+                val accessToken = getString("accessToken") ?: ""
+                val refreshToken = getString("refreshToken") ?: ""
+                UserSessionResponse(usuario, accessToken, refreshToken)
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+
     fun checkUserSession(): Boolean{
         if(checkKeys()){
-            val remember = getString("remember","")
+            val remember = getString("remember")
             if(remember.equals("true")){
                 return true
             }
@@ -64,7 +80,7 @@ class PreferencesManager (context: Context) {
         return false
     }
 
-    fun checkKeys(): Boolean {
+    private fun checkKeys(): Boolean {
         return (contains("usuario") &&
                 contains("accessToken") &&
                 contains("refreshToken") &&
