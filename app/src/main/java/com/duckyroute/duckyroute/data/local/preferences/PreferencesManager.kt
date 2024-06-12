@@ -8,7 +8,7 @@ import java.io.IOException
 class PreferencesManager (context: Context) {
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("duckyroute_preferences", Context.MODE_PRIVATE)
 
-    private fun saveString(key: String, value: String) {
+    fun saveString(key: String, value: String) {
         val editor = sharedPreferences.edit()
         editor.putString(key, value)
         editor.apply()

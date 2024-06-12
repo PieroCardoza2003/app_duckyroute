@@ -9,6 +9,7 @@ import com.duckyroute.duckyroute.databinding.ActivityLoginBinding
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
 import com.duckyroute.duckyroute.presentation.ui.error.ErrorActivity
 import com.duckyroute.duckyroute.presentation.ui.LoadDialog.LoadDialogFragment
+import com.duckyroute.duckyroute.presentation.ui.forgetpassword.OTPActivity
 import com.duckyroute.duckyroute.presentation.ui.home.HomeActivity
 import kotlin.reflect.KClass
 
@@ -26,12 +27,12 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.loginResult.observe(this){ result ->
             when (result) {
-                ResponseStatus.SUCCESS -> startActivity(HomeActivity::class)
+                ResponseStatus.SUCCESS -> startActivity(HomeActivity::class, true)
                 ResponseStatus.INCORRECT -> showMessage("Verifique su email y/o contraseña")
                 ResponseStatus.INVALID_EMAIL -> showMessage("El email ingresado es incorrecto")
                 ResponseStatus.EMPTY -> showMessage("Los campos no pueden estar en blanco")
-                ResponseStatus.ERROR -> startActivity(ErrorActivity::class)
-                else -> startActivity(ErrorActivity::class)
+                ResponseStatus.ERROR -> startActivity(ErrorActivity::class, true)
+                else -> startActivity(ErrorActivity::class, true)
             }
             showLoadAnimation(false)
         }
@@ -46,14 +47,14 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.textviewOlvidocontrasenaLogin.setOnClickListener{
-            showMessage("Recuperar contraseña")
+            startActivity(OTPActivity::class, false)
         }
     }
 
-    private fun startActivity(activityClass: KClass<*>){
+    private fun startActivity(activityClass: KClass<*>, end: Boolean){
         val intent = Intent(this, activityClass.java)
         startActivity(intent)
-        finish()
+        if (end) finish()
     }
 
     private fun showLoadAnimation(state: Boolean) {

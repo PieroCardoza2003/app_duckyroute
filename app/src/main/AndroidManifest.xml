@@ -17,10 +17,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.forgetpassword.OTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.ui.forgetpassword.FindAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".presentation.ui.error.ErrorActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".presentation.ui.home.HomeActivity"
             android:exported="false"

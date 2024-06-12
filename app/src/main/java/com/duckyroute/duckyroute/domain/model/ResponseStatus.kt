@@ -4,6 +4,7 @@ enum class ResponseStatus {
     SUCCESS,
     INCORRECT,
     ERROR,
+    TIMEOUT,
     INVALID_EMAIL,
     EMPTY
 }

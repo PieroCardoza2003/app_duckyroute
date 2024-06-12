@@ -10,4 +10,10 @@
     <string name="cierra_la_aplicaci_n_y_vuelve_a_intentarlo">Cierra la aplicación y vuelve a intentarlo</string>
     <string name="img_error">img_error</string>
     <string name="cerrar">Cerrar</string>
+    <string name="screen_scroll">screen_scroll</string>
+    <string name="verifica_tu_c_digo">Verifica tu código</string>
+    <string name="acabamos_de_enviar_un_c_digo_a">Acabamos de enviar un código a</string>
+    <string name="email_email_com">email@email.com</string>
+    <string name="_0">0</string>
+    <string name="aceptar">Aceptar</string>
 </resources>
