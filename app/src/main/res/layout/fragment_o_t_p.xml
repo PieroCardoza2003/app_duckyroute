@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:contentDescription="@string/screen_scroll"
+    tools:context=".presentation.ui.forgetpassword.OTP.OTPFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/verifica_tu_c_digo"
+            android:textSize="45sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/acabamos_de_enviar_un_c_digo_a"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textview_email_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email_email_com"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/edittext_code_1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/border_radius"
+                android:textColor="@color/black"
+                android:hint="@string/_0"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edittext_code_2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="@string/_0"
+                android:background="@drawable/border_radius"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edittext_code_3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="@string/_0"
+                android:background="@drawable/border_radius"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:autofillHints="" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edittext_code_4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="@string/_0"
+                android:background="@drawable/border_radius"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:autofillHints="" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edittext_code_5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:hint="@string/_0"
+                android:background="@drawable/border_radius"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="30sp"
+                android:autofillHints="" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_aceptar_otp"
+            android:layout_marginTop="20dp"
+            android:padding="13dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:text="@string/aceptar"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

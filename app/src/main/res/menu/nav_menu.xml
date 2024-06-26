@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/button_inicio"
+            android:title="@string/inicio"
+
+            android:icon="@drawable/icon_home" />
+
+        <item
+            android:id="@+id/button_minformacion"
+            android:title="@string/mi_informaci_n"
+            android:icon="@drawable/icon_person" />
+
+        <item
+            android:id="@+id/button_seguridad"
+            android:title="@string/seguridad"
+            android:icon="@drawable/icon_security" />
+
+        <item
+            android:id="@+id/button_cerrarsesion"
+            android:title="@string/cerrar_sesi_n"
+            android:icon="@drawable/icon_logout" />
+
+    </group>
+
+</menu>

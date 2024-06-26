@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.home.myinformation.conductor.ConductorFragment">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/n_de_licencia"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edittext_nlicencia_conductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:hint="@string/n_mero_de_licencia"
+        android:enabled="false"
+        android:inputType="text"
+        android:padding="13dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/tipo_de_licencia"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edittext_tipolicencia_conductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:hint="@string/tipo_de_licencia"
+        android:enabled="false"
+        android:inputType="text"
+        android:padding="13dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/fecha_de_emisi_n"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edittext_fechaemision_conductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:hint="@string/fecha_de_emisi_n"
+        android:enabled="false"
+        android:inputType="text"
+        android:padding="13dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/fecha_de_expiraci_n"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edittext_fechaexpiracion_conductor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:hint="@string/fecha_de_expiraci_n"
+        android:enabled="false"
+        android:padding="13dp"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+
+
+
+</LinearLayout>

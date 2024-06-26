@@ -4,11 +4,28 @@
         <!-- Configurar Tema de la aplicacion -->
         <item name="colorPrimary">@color/colorDuckyHigh</item>
         <item name="colorSecondary">@color/colorDuckyLow</item>
-        <!-- Color de la barra de estado -->
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
+
         <!-- Aplicar el color de texto negro a toda la aplicación -->
         <item name="android:textColor">@color/black</item>
+
+        <!-- Aplicar el style round al button floating -->
+        <item name="floatingActionButtonStyle">@style/FloatingActionButtomStyle</item>
+
+        <!-- configurar el color de las barras inferior y superior -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        <!--
+        Status bar transparent
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+
+        navigation bar transparent
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        -->
     </style>
 
     <style name="Theme.DuckyRoute" parent="Base.Theme.DuckyRoute"/>
@@ -19,4 +36,14 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/sp_icon_duckyroute</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.DuckyRoute</item>
     </style>
+
+    <style name="FloatingActionButtomStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle1</item>
+    </style>
+
+    <style name="FabShapeStyle1" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 </resources>

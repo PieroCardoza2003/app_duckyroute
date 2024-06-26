@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_corners"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:background="@color/white"
+            app:tint="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:text="@string/veh_culo_asignado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/button_close_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_close"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_corners"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical"
+        android:padding="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:text="@string/n_de_placa"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_placa_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_corners"
+            android:hint="@string/placa"
+            android:enabled="false"
+            android:inputType="text"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/descripci_n"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_descripcion_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_corners"
+            android:hint="@string/sin_descripci_n"
+            android:enabled="false"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:overScrollMode="always"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/button_aceptar_vehicle"
+            android:layout_marginTop="20dp"
+            android:padding="13dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:text="@string/aceptar"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</LinearLayout>

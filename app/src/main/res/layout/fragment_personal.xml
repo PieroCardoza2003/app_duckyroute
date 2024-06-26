@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.home.myinformation.InformationFragment">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/nombres"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_nombres_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:hint="@string/nombres"
+            android:enabled="false"
+            android:inputType="text"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/apellidos"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_apellidos_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:hint="@string/apellidos"
+            android:enabled="false"
+            android:inputType="text"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/dni"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_dni_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:hint="@string/dni"
+            android:enabled="false"
+            android:inputType="number"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/fecha_de_nacimiento"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_fechanacimiento_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:hint="@string/fecha_de_nacimiento"
+            android:enabled="false"
+            android:inputType="text"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/direcci_n"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edittext_direccion_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:hint="@string/direcci_n"
+            android:inputType="text"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints="" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/tel_fono"
+            android:textStyle="bold"
+            android:textColor="@color/grayHigh"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:background="@drawable/border_radius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <EditText
+                    android:maxLength="50"
+                    android:id="@+id/edittext_telefono_personal"
+                    android:padding="13dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/tel_fono"
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:autofillHints=""/>
+
+                <TextView
+                    android:id="@+id/textview_editartelefono_personal"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="15sp"
+                    android:text="@string/editar"
+                    android:textColor="@color/colorDuckyHigh"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>
+
+

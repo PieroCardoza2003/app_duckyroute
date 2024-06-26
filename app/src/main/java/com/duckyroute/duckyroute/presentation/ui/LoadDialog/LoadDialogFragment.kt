@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.duckyroute.duckyroute.databinding.LoadDialogBinding
 
-class LoadDialogFragment(
-    private val message: String = ""
-): DialogFragment() {
+class LoadDialogFragment(private val message: String = ""): DialogFragment() {
 
     private lateinit var binding: LoadDialogBinding
 
@@ -31,5 +29,4 @@ class LoadDialogFragment(
         super.onViewCreated(view, savedInstanceState)
         binding.textviewMessageLoaddialog.text = message
     }
-
 }

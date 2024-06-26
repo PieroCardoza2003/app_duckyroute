@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home_graph"
+    app:startDestination="@id/mapsFragment">
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.duckyroute.duckyroute.presentation.ui.home.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/securityFragment"
+        android:name="com.duckyroute.duckyroute.presentation.ui.home.security.SecurityFragment"
+        android:label="fragment_security"
+        tools:layout="@layout/fragment_security" />
+
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.duckyroute.duckyroute.presentation.ui.home.myinformation.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information" />
+
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="com.duckyroute.duckyroute.presentation.ui.home.chatbot.ChatBotFragment"
+        android:label="fragment_chat_bot"
+        tools:layout="@layout/fragment_chat_bot" />
+
+    <action
+        android:id="@+id/action_mapsFragment_to_mapsFragment"
+        app:destination="@id/mapsFragment"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"/>
+
+    <action
+        android:id="@+id/action_mapsFragment_to_informationFragment"
+        app:destination="@id/informationFragment"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"/>
+
+    <action
+        android:id="@+id/action_mapsFragment_to_securityFragment"
+        app:destination="@id/securityFragment"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"/>
+
+    <action
+        android:id="@+id/action_start_fragment_chatbot"
+        app:destination="@id/chatBotFragment"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"/>
+
+
+</navigation>

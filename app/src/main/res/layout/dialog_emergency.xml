@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_corners"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:background="@color/white"
+            app:tint="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:text="@string/emergencia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/button_close_emergency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_close"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/bg_corners"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical"
+        android:padding="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/en_caso_de_alguna_emergencia_presione_el_bot_n_de_llamar_para_ponerse_en_contacto_con_la_central_de_asistencia_al_conductor"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/button_llamar_emergency"
+            android:layout_marginTop="20dp"
+            android:padding="13dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:text="@string/llamar"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</LinearLayout>

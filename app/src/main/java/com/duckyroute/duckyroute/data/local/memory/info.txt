@@ -1,3 +1,0 @@
-# En esta parte se esta manejando la persistencia temporal de los
-# datos guadardandolos en memoria para acceder a ellos
-# de forma global.

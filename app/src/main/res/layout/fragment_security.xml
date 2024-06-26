@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.home.security.SecurityFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:elevation="10dp">
+
+        <ImageButton
+            android:id="@+id/button_back_seguridad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/bg_corners"
+            android:padding="10dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:text="@string/seguridad"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            app:tint="@color/white"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/si_desea_cambiar_su_contrase_a_complete_los_campos_correctamente_y_confirme"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:maxLength="50"
+                    android:id="@+id/edittext_oldpassword_security"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/icon_password"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/contrase_a_anterior"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:autofillHints=""/>
+
+                <ImageButton
+                    android:id="@+id/button_hidepassword_oldpassword"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_noeye"
+                    android:scaleType="fitCenter"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/hidepass1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:maxLength="100"
+                    android:id="@+id/edittext_newpasword_security"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/icon_password"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/nueva_contrase_a"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:autofillHints=""/>
+
+                <ImageButton
+                    android:id="@+id/button_hidepassword_newpassword"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:padding="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_noeye"
+                    android:scaleType="fitCenter"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/button_hidepassword" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_aceptar_security"
+                android:layout_marginTop="20dp"
+                android:padding="13dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/colorDuckyHigh"
+                android:text="@string/confirmar"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/button_cancelar_security"
+                android:layout_marginTop="5dp"
+                android:padding="13dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/gray"
+                android:text="@string/cancelar"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.home.myinformation.cuenta.CuentaFragment">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/correo_electr_nico"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edittext_email_cuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:hint="@string/correo_electr_nico"
+        android:enabled="false"
+        android:inputType="textEmailAddress"
+        android:padding="13dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:autofillHints="" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/contrase_a"
+        android:textStyle="bold"
+        android:textColor="@color/grayHigh"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:background="@drawable/border_radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:maxLength="50"
+            android:id="@+id/edittext_contrasena_cuenta"
+            android:padding="13dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:background="@android:color/transparent"
+            android:hint="@string/contrase_a"
+            android:text="@string/contrase_adelusuario"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:autofillHints=""/>
+
+        <TextView
+            android:id="@+id/textview_editarpassword_cuenta"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:text="@string/editar"
+            android:textColor="@color/colorDuckyHigh"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

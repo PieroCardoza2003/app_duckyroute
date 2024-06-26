@@ -2,10 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature android:name="android.hardware.telephony"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
     <application
-        android:name=".data.local.preferences.PreferencesManagerService"
+        android:usesCleartextTraffic="true"
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,14 +22,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DuckyRoute"
-        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCLQ2xJXnO_xEurAvd9s_ZlRXffpPwRxJo" />
+
         <activity
-            android:name=".presentation.ui.forgetpassword.OTPActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".presentation.ui.forgetpassword.FindAccountActivity"
+            android:name=".presentation.ui.forgetpassword.ForgetPasswordActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -35,7 +43,8 @@
         <activity
             android:name=".presentation.ui.login.LoginActivity"
             android:exported="false"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".presentation.ui.main.MainActivity"
             android:exported="true"

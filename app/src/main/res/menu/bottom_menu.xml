@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/button_vehiculo"
+        android:title="@string/veh_culo"
+        android:icon="@drawable/icon_car" />
+
+    <item
+        android:enabled="false"
+        android:title=""/>
+
+    <item
+        android:id="@+id/button_emergencia"
+        android:title="@string/emergencia"
+        android:icon="@drawable/icon_call" />
+</menu>

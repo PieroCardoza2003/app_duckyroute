@@ -8,17 +8,17 @@ import java.io.IOException
 class PreferencesManager (context: Context) {
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("duckyroute_preferences", Context.MODE_PRIVATE)
 
-    fun saveString(key: String, value: String) {
+    fun saveKey(key: String, value: String) {
         val editor = sharedPreferences.edit()
         editor.putString(key, value)
         editor.apply()
     }
 
-    private fun getString(key: String): String? {
+    fun getKey(key: String): String? {
         return sharedPreferences.getString(key, "")
     }
 
-    private fun deleteString(key: String) {
+    private fun deleteKey(key: String) {
         val editor = sharedPreferences.edit()
         editor.remove(key)
         editor.apply()
@@ -29,37 +29,33 @@ class PreferencesManager (context: Context) {
     }
 
     fun deleteUserSession(): Boolean{
-        try {
-            deleteString("usuario")
-            deleteString("accessToken")
-            deleteString("refreshToken")
-            deleteString("remember")
-            return true
+        return try {
+            deleteKey("usuario")
+            deleteKey("accessToken")
+            deleteKey("refreshToken")
+            true
         }catch (e: IOException){
-            print(e)
+            false
         }
-        return false
     }
 
     fun saveUserSession(data: UserSessionResponse): Boolean{
-        try{
-            saveString("usuario", data.usuarioId.toString())
-            saveString("accessToken", data.accessToken)
-            saveString("refreshToken", data.refreshToken)
-            saveString("remember", "true")
-            return true
+        return try{
+            saveKey("usuario", data.usuarioId.toString())
+            saveKey("accessToken", data.accessToken)
+            saveKey("refreshToken", data.refreshToken)
+            true
         } catch (e: IOException){
-            print(e)
+            false
         }
-        return false
     }
 
     fun getUserSession(): UserSessionResponse? {
         return try {
             if (checkUserSession()) {
-                val usuario = getString("usuario")?.toIntOrNull() ?: -1
-                val accessToken = getString("accessToken") ?: ""
-                val refreshToken = getString("refreshToken") ?: ""
+                val usuario = getKey("usuario")?.toInt() ?: -1
+                val accessToken = getKey("accessToken") ?: ""
+                val refreshToken = getKey("refreshToken") ?: ""
                 UserSessionResponse(usuario, accessToken, refreshToken)
             } else {
                 null
@@ -69,22 +65,10 @@ class PreferencesManager (context: Context) {
         }
     }
 
-
-    fun checkUserSession(): Boolean{
-        if(checkKeys()){
-            val remember = getString("remember")
-            if(remember.equals("true")){
-                return true
-            }
-        }
-        return false
-    }
-
-    private fun checkKeys(): Boolean {
+    fun checkUserSession(): Boolean {
         return (contains("usuario") &&
                 contains("accessToken") &&
-                contains("refreshToken") &&
-                contains("remember"))
+                contains("refreshToken"))
     }
 
 }

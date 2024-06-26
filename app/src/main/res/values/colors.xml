@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorDuckyHigh">#FBD603</color>
     <color name="colorDuckyLow">#63FBD603</color>
+    <color name="gray">#EFEFEF</color>
+    <color name="grayHigh">#858585</color>
 </resources>

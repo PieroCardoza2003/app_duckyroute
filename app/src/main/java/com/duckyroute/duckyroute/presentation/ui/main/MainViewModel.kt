@@ -3,7 +3,7 @@ package com.duckyroute.duckyroute.presentation.ui.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerService.Companion.preferencesManager
+import com.duckyroute.duckyroute.MainApplication.Companion.preferencesManager
 
 class MainViewModel: ViewModel(){
 

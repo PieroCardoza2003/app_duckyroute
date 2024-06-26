@@ -3,7 +3,7 @@ package com.duckyroute.duckyroute.presentation.ui.login
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerService.Companion.preferencesManager
+import com.duckyroute.duckyroute.MainApplication.Companion.preferencesManager
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
 import com.duckyroute.duckyroute.domain.model.UserSessionRequest
 import com.duckyroute.duckyroute.domain.model.UserSessionResponse
@@ -12,12 +12,11 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 
 class LoginViewModel: ViewModel() {
-
     var getUserSession = GetUserSessionUseCase()
     val loginResult = MutableLiveData<ResponseStatus>()
+    var showPassword: Boolean = false
 
     fun iniciarSession(email: String, password: String){
-
         if (!validarCampos(email, password))
             return
 
@@ -27,13 +26,13 @@ class LoginViewModel: ViewModel() {
                 val response = getUserSession(request)
 
                 if (response != null) {
-                    if(saveUserSession(response)){
+                    if (saveUserSession(response)) {
                         loginResult.postValue(ResponseStatus.SUCCESS)
                     }
                 } else {
-                    loginResult.postValue(ResponseStatus.INCORRECT)
+                    loginResult.postValue(ResponseStatus.UNSUCCESS)
                 }
-            } catch (e: IOException) {
+            }catch (e: IOException) {
                 loginResult.postValue(ResponseStatus.ERROR)
             }
         }

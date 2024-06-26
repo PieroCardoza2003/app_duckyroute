@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.home.maps.MapsFragment">
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmet_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/buton_menu_home"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:elevation="5dp"
+            android:padding="15dp"
+            android:src="@drawable/icon_menu"
+            android:contentDescription="@string/todo" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/button_chatbot_home"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:padding="15dp"
+            android:src="@drawable/icon_chatbot"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="50dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/bottom_navigation"
+                app:labelVisibilityMode="labeled"
+                app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+                app:itemTextColor="@color/black"
+                app:itemIconTint="@color/black"
+                app:menu="@menu/bottom_menu"
+                android:background="@android:color/transparent"/>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_navegar_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabCustomSize="65dp"
+            android:src="@drawable/icon_navigation"
+            android:tint="@color/black"
+            app:maxImageSize="30dp"
+            android:backgroundTint="@color/colorDuckyHigh"
+            app:layout_anchor="@id/bottomAppBar"
+            android:contentDescription="@string/boton_navegar" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

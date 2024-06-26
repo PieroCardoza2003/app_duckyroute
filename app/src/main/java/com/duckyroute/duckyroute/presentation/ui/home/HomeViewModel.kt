@@ -1,50 +1,67 @@
 package com.duckyroute.duckyroute.presentation.ui.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.duckyroute.duckyroute.data.local.preferences.PreferencesManagerService.Companion.preferencesManager
-import com.duckyroute.duckyroute.domain.model.ConductorResponse
-import com.duckyroute.duckyroute.domain.usecase.GetConductorApiUseCase
-import com.duckyroute.duckyroute.domain.usecase.SetConductorMemoryUseCase
+import com.duckyroute.duckyroute.MainApplication.Companion.preferencesManager
+import com.duckyroute.duckyroute.domain.usecase.GetConductorUseCase
 import kotlinx.coroutines.launch
 import com.duckyroute.duckyroute.domain.model.ResponseStatus
-import com.duckyroute.duckyroute.domain.usecase.GetConductorMemoryUseCase
+import com.duckyroute.duckyroute.domain.model.local.Conductor
+import com.duckyroute.duckyroute.domain.usecase.CloseSessionUseCase
 import java.io.IOException
 
 class HomeViewModel: ViewModel(){
 
-    var getConductorApi = GetConductorApiUseCase()
+    private lateinit var conductor: Conductor
 
-    var setConductorMemory = SetConductorMemoryUseCase()
-    var getConductorMemoryUseCase = GetConductorMemoryUseCase()
-
-    private val _data = MutableLiveData<ConductorResponse>() // Modificable
-    val data: LiveData<ConductorResponse> = _data // Observable
+    var getConductorUseCase = GetConductorUseCase()
+    var closeSessionUseCase = CloseSessionUseCase()
 
     val result = MutableLiveData<ResponseStatus>()
+    val loading = MutableLiveData<Boolean>()
+
+    fun getConductor(): Conductor{
+        return conductor
+    }
+
+    fun updateTelefono(codigoPais: String, numero: String){
+        conductor = conductor.copy(codigo_pais = codigoPais, numero = numero)
+    }
 
     fun onCreate() {
+        loading.postValue(true)
         viewModelScope.launch {
             try {
                 val session = preferencesManager.getUserSession()
 
                 if (session != null) {
-                    val response = getConductorApi(session.usuarioId)
+                    val response = getConductorUseCase(session.usuarioId)
+
                     if (response != null) {
-                        setConductorMemory(response)
-                        _data.value = getConductorMemoryUseCase()
+                        conductor = response
                         result.postValue(ResponseStatus.SUCCESS)
                         return@launch
                     }
                 }
-                preferencesManager.deleteUserSession()
-                result.postValue(ResponseStatus.EMPTY)
+                closeSession()
             } catch (ex: IOException) {
                 result.postValue(ResponseStatus.ERROR)
             }
         }
+        loading.postValue(false)
     }
 
+    fun closeSession(){
+        loading.postValue(true)
+        viewModelScope.launch {
+            try {
+                closeSessionUseCase()
+                result.postValue(ResponseStatus.EMPTY)
+            } catch (io: IOException){
+                result.postValue(ResponseStatus.ERROR)
+            }
+        }
+        loading.postValue(false)
+    }
 }

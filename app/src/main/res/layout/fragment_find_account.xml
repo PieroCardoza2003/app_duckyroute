@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/screen_scroll"
+    tools:context=".presentation.ui.forgetpassword.FindAccount.FindAccountFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recupera_tu_cuenta"
+            android:textSize="45sp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/introduce_tu_correo_electr_nico_para_buscar_tu_cuenta"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/edittext_email_recupera_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_radius"
+            android:drawableStart="@drawable/icon_person"
+            android:drawablePadding="10dp"
+            android:hint="@string/correo_electr_nico"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:autofillHints="" />
+
+
+        <Button
+            android:id="@+id/button_aceptar_recupera_cuenta"
+            android:layout_marginTop="20dp"
+            android:padding="13dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:text="@string/aceptar"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/button_cancelar_recupera_cuenta"
+            android:layout_marginTop="5dp"
+            android:padding="13dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/gray"
+            android:text="@string/cancelar"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</ScrollView>

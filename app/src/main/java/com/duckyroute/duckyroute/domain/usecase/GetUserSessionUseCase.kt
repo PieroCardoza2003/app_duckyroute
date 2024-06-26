@@ -1,6 +1,6 @@
 package com.duckyroute.duckyroute.domain.usecase
 
-import com.duckyroute.duckyroute.data.repository.UserSessionRepository
+import com.duckyroute.duckyroute.data.repository.remote.UserSessionRepository
 import com.duckyroute.duckyroute.domain.model.UserSessionRequest
 import com.duckyroute.duckyroute.domain.model.UserSessionResponse
 

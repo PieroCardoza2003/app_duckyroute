@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.home.chatbot.ChatBotFragment">
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:elevation="10dp">
+
+        <ImageButton
+            android:id="@+id/button_back_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/bg_corners"
+            android:padding="10dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/centro_de_ayuda"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/button_limpiar_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_add"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:background="@drawable/bg_corners"
+            android:padding="10dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/todo" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reciclerview_mensajes_chat"
+        android:layout_below="@id/top_layout"
+        android:layout_above="@id/bottom_layout"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:gravity="bottom"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="1dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edittext_mensaje_chat"
+            android:padding="13dp"
+            android:background="@drawable/bg_corners"
+            android:backgroundTint="@color/colorDuckyLow"
+            android:hint="@string/escriba_aqu"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:maxLength="255"
+            android:maxLines="5"/>
+
+        <ImageButton
+            android:id="@+id/boton_enviar_chat"
+            android:contentDescription="@string/img_send"
+            android:layout_marginStart="5dp"
+            android:padding="15sp"
+            android:background="@drawable/border_radius"
+            android:backgroundTint="@color/colorDuckyHigh"
+            android:src="@drawable/baseline_send_24"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
